@@ -1,0 +1,692 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*______________________Heade______________________*/
+.header {
+    padding: 10px 30px;
+    background-color: #232A2F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__container-logo {
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+}
+
+.header__titulo {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 3px;
+    user-select: none;
+}
+
+.header__img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-top: 5px;
+}
+
+.navegation__ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navegation__lista {
+    display: inline-block;
+    border-radius: 8px;
+    transition: all .3s linear;
+    margin: 0 10px;
+    user-select: none;
+}
+    .navegation__lista:hover {
+        background-color: #fff;
+    }
+
+.navegation__enlace {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    transition: all .3s linear;
+    display: inline-block;
+    user-select: none;
+}
+
+    .navegation__enlace:hover {
+        color: #000;
+    }
+
+/*______________________Main______________________*/
+.main {
+    background-color: #232A2F;
+    background-image: url("/img/fondo.png");
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    min-height: 350px;
+}
+
+.main-azul {
+    background-image: url("/img/fondo2.png");
+}
+
+.main__titulo-card {
+    margin: 0;
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 3px 5px #000;
+
+    -webkit-animation:acordeon 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s both;
+	animation: acordeon 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s both;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.main___titulo-principal {
+    font-size: 10vw;;
+    color: #fff;
+    margin: 0;
+    transition: .3s ease-in;
+    user-select: none;
+}
+
+    .main___titulo-principal:hover {
+        text-shadow: 8px 10px #000;
+        font-size: 12vw;
+    }
+
+.main__img-container {
+    background-color: white;
+    width: 20vw;
+    height:20vw;
+    min-width: 150px;
+    min-height: 150px;
+    border-radius: 100%;
+    border: black solid 3px;
+    box-shadow: 5px 5px 25px black;
+    margin: 10px;
+
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.main__img-qr {
+    width: 15vw;
+    height: 15vw;
+    min-width: 120px;
+    min-height: 120px;
+    margin: auto;
+
+    animation-name: girar;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-timing-function:cubic-bezier(1, -1.14, 0, 1.43) ; 
+}
+
+.main__comentario {
+    color:rgb(216, 204, 204);
+    font-size: 3vw;
+    user-select: none;
+
+    -webkit-animation: aparecer 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	animation: aparecer 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+/*______________________Main/Card______________________*/
+.card {
+    width: 55%;
+    height: 400px;
+    background-color: #B9C3CB;
+    padding: 10px;
+    padding-left: 90px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    margin: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card__img {
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    border: #000 solid 2px;
+    display: none;
+}
+
+.card__img-activo {
+    display: block;
+}
+
+.form__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:15px;
+    width: 550px;
+    border-right: #000 solid 2px;
+    padding-right: 20px;
+}
+
+.formulario__label {
+    display: block;
+    font-weight:  700;
+    padding: 10px;
+    cursor: pointer;
+    color: #000;
+}
+
+.formulario__grupo-input {
+    position: relative;
+}
+
+.formulario__input {
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    padding: 0 40px 0 10px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    line-height: 45px;
+    transition: .3s ease all;
+}
+
+.formulario__input:focus {
+    border: 3px solid #0075ff;
+    outline: none;
+}
+
+.formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo {
+    display: block;
+}
+
+.formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.formulario__mensaje, .formulario__grupo-btn-enviar {
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    width: 100%;
+    line-height: 45px;
+    background-color: #f66060;
+    padding: 0 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 25%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .4s ease all;
+
+    -webkit-animation: helatina 0.9s both;
+	animation: helatina 0.9s both;
+}
+
+.formulario__btn:hover {
+    background-color: rgb(41, 38, 38);
+    width: 32%;
+}
+
+.formulario__btn-inactivo {
+    display: none;
+}
+
+.formulario__btn-darcarga {
+    margin: auto;
+    margin-top: 10px;
+    width: 65%;
+    background-color: #bb2929;
+}
+
+.formulario__btn-darcarga:hover {
+    background-color: #940e0e;
+    width: 95%;
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+/*Estilos para validaciones*/
+
+.formulario__grupo-correcto  .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto  .formulario__label{
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+
+.card__img-container {
+    margin: auto;
+}
+
+.img__container {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/*______________________Footer______________________*/
+.footer {
+    padding: 20px;
+    color: white;
+    background-color:#0B090A;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+.fotter__prueba {
+    background-color: #000000;
+    opacity: 1;
+    background-image: radial-gradient(#f3f3f3 1.9000000000000001px, #000000 1.9000000000000001px);
+    background-size: 38px 38px;
+}
+
+.media {
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+}
+
+.media__logo {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    margin: 0 5px;
+    display: inline-block;
+
+    -webkit-animation: latido 1.5s ease-in-out infinite both;
+	animation: latido 1.5s ease-in-out infinite both;
+}
+
+
+/*______________________Animations______________________*/
+@keyframes girar {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*Ani titulo*/
+@-webkit-keyframes acordeon {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes acordeon {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*Ani comentario*/
+@-webkit-keyframes aparecer {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+/*Ani Redes*/
+
+@-webkit-keyframes latido {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes latido {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+/*Ani Boton*/
+@-webkit-keyframes helatina {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes helatina {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/*______________________Mediaqueries______________________*/
+@media screen and (max-width: 800px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+    
+    .formulario__mensaje, .formulario__grupo-btn-enviar {
+        grid-column: 1;
+    }
+    
+    .formulario__btn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1431px) {
+    .card {
+        height: 700px;
+        padding-left: 10px;
+    }
+
+    .formulario {
+        border-right:none;
+        border-bottom: #000 solid 2px;
+        padding:10px;
+    }
+}
+
+@media screen and (max-width: 741px) {
+    .card {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 760px) {
+    .card {
+        margin-top: 20px;
+        height: 800px;
+    }
+
+    .main__titulo-card {
+        margin-top: 30px;
+        font-size: 40px;
+    
+    }
+
+    .card__img {
+        height: 200px;
+        width: 200px;
+        margin: auto;
+    }
+}
